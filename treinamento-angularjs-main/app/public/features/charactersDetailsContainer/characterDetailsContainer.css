@@ -1,0 +1,112 @@
+body {
+    color: #000;
+}
+
+.jumbotron{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    background-color: #d6d6d6;
+    height: 180px;
+}
+
+.nameCharacter{
+    position: relative;
+    margin-top: -25px;
+    margin-left: 10px;
+    width: 900px;
+}
+
+.descriptionCharacter{
+    width: 900px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.img-character{
+    border-radius: 40px;
+    width: 270px;
+    position: relative;
+}
+
+:root {
+    --offset-before: 8px;
+    --offset-after: 16px;
+}
+.card-container{
+    padding-left: 30px;
+    
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    margin: 60px auto;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card::before,
+.card::after,
+.card .card-inner {
+    background-color: #d6d6d6;
+    border: 1px solid #720303;
+    transition: transform 0.5s;
+}
+
+.card::before,
+.card-inner {
+    z-index: 1;
+}
+
+.card-inner {
+    position: relative;
+    padding: 4rem;
+}
+
+/*Diagonal => Left*/
+.cards-diagonal::before {
+    width: 370px;
+    transform: translate(calc(3 * 8px),
+            calc(-1 * 8px));
+}
+
+.cards-diagonal::after {
+    width: 370px;
+    transform: translate(calc(2 * 16px),
+            calc(-1 * 16px));
+}
+
+.cards-diagonal:hover::before {
+    transform: translate(7px, 5px);
+}
+
+.cards-diagonal:hover::after {
+    transform: translate(1px, 8px);
+}
+
+/*Rotate => Left */
+.cards-rotate::before,
+.cards-rotate::after {
+    transform-origin: 50% 100%;
+}
+
+.cards-rotate:hover {
+    transform: translate(2.5px, 0) rotate(2.5deg);
+}
+
+.cards-rotate:hover::before {
+    transform: translate(2.5px, 0) rotate(2.5deg);
+}
+
+.cards-rotate:hover::after {
+    transform: translate(5px, 0) rotate(5deg);
+}
