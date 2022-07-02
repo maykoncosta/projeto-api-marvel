@@ -4,11 +4,11 @@
   "description": "",
   "main": "teste.js",
   "scripts": {
-    "start": "npm node index.js",
+    "start": "node index.js",
     "dev": "gulp dev"
   },
   "engines": {
-    "node": "8.15.1"
+    "node": "10.15.1"
   },
   "author": "",
   "license": "MIT",
