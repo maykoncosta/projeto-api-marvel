@@ -96,7 +96,7 @@ gulp.task("server", ["watch"], () => {
     webserver({
       host: "localhost",
       livereload: true,
-      port: 4200,
+      port: process.env.PORT || 5000,
       open: false,
     })
   );
