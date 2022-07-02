@@ -4,7 +4,7 @@
   "description": "",
   "main": "teste.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app/index.js",
     "dev": "gulp dev"
   },
   "engines": {
