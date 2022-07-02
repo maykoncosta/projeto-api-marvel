@@ -4,6 +4,7 @@
   "description": "",
   "main": "teste.js",
   "scripts": {
+    "start": "start",
     "dev": "gulp dev"
   },
   "engines": {
