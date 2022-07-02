@@ -1,0 +1,7 @@
+estrutura hibrída (por features e depois por tipos);
+a chave é tornar o código localizável;
+não deve ter acesso a dados no controller;
+
+
+dúvidas:
+
