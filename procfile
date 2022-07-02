@@ -1,1 +1,2 @@
 web: npm run dev
+work: .listen(process.env.PORT || 5000)
