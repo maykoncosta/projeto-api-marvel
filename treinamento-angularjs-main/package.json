@@ -1,10 +1,13 @@
 {
-  "name": "treinamento-angular",
+  "name": "projeto-safra-api-marvel",
   "version": "1.0.0",
   "description": "",
   "main": "teste.js",
   "scripts": {
     "dev": "gulp dev"
+  },
+  "engines": {
+    "node": "8.15.1"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +16,8 @@
     "angular": "1.8.2",
     "angular-animate": "^1.8.3",
     "bootstrap": "^3.4.1",
+    "heroku": "^7.60.2",
+    "jest": "^28.1.2",
     "jquery": "3.5.1",
     "popper.js": "^1.16.1"
   },
