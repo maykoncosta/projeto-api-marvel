@@ -1,2 +1,1 @@
-web: node index.js
-work: .listen(process.env.PORT || 5000)
+web: node app.js
