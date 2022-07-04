@@ -8,35 +8,39 @@
     </div>
         <div class="card-container ">
             <div class="card cards-diagonal col-md-4 col-xs-6 col-sm-4">
-                <div class="card-inner">
+                <div class="card-inner"
+                ng-click="ctrl.getComicsByCharacter(ctrl.characterId)">
                     <h1>Comics</h1>
-                    <h3 class="card-title">GeeksforGeeks</h3>
-                    <div class="card-body">
-                        {{ctrl.characterComicsItems.length}}
+                    <div class="card-body" >
+                        {{ctrl.characterComicsCount.length}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-container ">
             <div class="card cards-diagonal col-md-4 col-xs-12 col-sm-6">
-                <div class="card-inner">
+                <div class="card-inner" 
+                ng-click="ctrl.getStoriesByCharacter(ctrl.characterId)">
                     <h1>Stories</h1>
-                    <h3 class="card-title">GeeksforGeeks</h3>
                     <div class="card-body">
-                        {{ctrl.characterStoriesItems.length}}
+                        {{ctrl.characterStoriesCount.length}}
                     </div>
                 </div>
             </div>
         </div>
         <div class="card-container ">
-            <div class="card cards-diagonal col-md-4 col-xs-6 col-sm-4">
-                <div class="card-inner">
+            <div class="card cards-diagonal col-md-12 col-xs-12 col-sm-12">
+                <div class="card-inner"  
+                ng-click="ctrl.getSeriesByCharacter(ctrl.characterId)">
                     <h1>Series</h1>
-                    <h3 class="card-title">GeeksforGeeks</h3>
                     <div class="card-body">
-                        {{ctrl.characterSeriesItems.length}}
+                        {{ctrl.characterSeriesCount.length}}
                     </div>
                 </div>
             </div>
         </div>
+        <div ng-repeat="characterItem in ctrl.characterItems" 
+        class="col-xs-6 col-sm-4 col-md-3">
+        <list-character-items character-item="characterItem"></list-character-items>
+      </div>
 </section>

@@ -23,6 +23,7 @@ function HomeController(charactersService, $state) {
       vm.countCharacters += response.data.data.results.length;
       vm.totalItens = response.data.data.total;
       vm.characters = response.data.data.results;
+      console.log(vm.characters)
     })
     .catch((error) => {
       console.log(error);

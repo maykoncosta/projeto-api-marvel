@@ -4,9 +4,10 @@ function CharactersDetailsController($stateParams, charactersService) {
     const vm = this;
     vm.characterId = $stateParams.characterId;
     vm.charactersDetails =[];
-    vm.characterComicsItems = [];
-    vm.characterSeriesItems = [];
-    vm.characterStoriesItems = [];
+    vm.characterComicsCount = [];
+    vm.characterSeriesCount = [];
+    vm.characterStoriesCount = [];
+    vm.characterItems = [];
     vm.apiKey = charactersService.apikeyExport();
 
     vm.getDetails = (characterId) => {
@@ -14,11 +15,46 @@ function CharactersDetailsController($stateParams, charactersService) {
         .getCharacterDetails(characterId)
         .then((response) => {
           vm.charactersDetails = response.data.data.results[0];
-          vm.characterComicsItems = vm.charactersDetails.comics.items;
-          vm.characterSeriesItems = vm.charactersDetails.series.items;
-          vm.characterStoriesItems = vm.charactersDetails.stories.items;
-          console.log(vm.apiKey);
-          console.log(vm.charactersDetails.thumbnail.path);
+          vm.characterComicsCount = vm.charactersDetails.comics.items;
+          vm.characterSeriesCount = vm.charactersDetails.series.items;
+          vm.characterStoriesCount = vm.charactersDetails.stories.items;
+          console.log(vm.characterComicsItems);
+          console.log(vm.characterSeriesItems);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      };
+
+      vm.getComicsByCharacter = (characterId) => {
+        charactersService
+        .getCharacterComics(characterId)
+        .then((response) => {
+          vm.characterItems = response.data.data.results;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      };
+
+      vm.getStoriesByCharacter = (characterId) => {
+        charactersService
+        .getCharacterStories(characterId)
+        .then((response) => {
+          vm.characterItems = response.data.data.results;
+
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      };
+
+      vm.getSeriesByCharacter = (characterId) => {
+        charactersService
+        .getCharacterSeries(characterId)
+        .then((response) => {
+          vm.characterItems = response.data.data.results;
+
         })
         .catch((error) => {
           console.log(error);
@@ -26,4 +62,5 @@ function CharactersDetailsController($stateParams, charactersService) {
       };
 
       vm.getDetails(vm.characterId);
+      //vm.getComicsByCharacter(vm.characterId);
 }

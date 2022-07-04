@@ -1,15 +1,17 @@
 angular.module('app').service("CharactersService", function($http, env){
     const urlBase = env.apiUrl;
+    const vm = this;
+
     let params = {
-        apikey: "4bd1c1b8e6ca585e6e5e6509febaf4ae",
-        hash: "1acfdfa9a86d3e56ac67182a44b5692f",
+        apikey: "5a6fb8e8a9f6c2ade1a5c13c01b1ba40",
+        hash: "74f3a589a2580a1b87c962f310325afd",
         ts: 1,
     };
-    this.apikeyExport = () =>{
+    vm.apikeyExport = () =>{
     return `?apikey=${params.apikey}&hash=${params.hash}&ts=${params.ts}`;
     }
 
-    this.getAllCharacters = (name, offset, limit)=> {
+    vm.getAllCharacters = (name, offset, limit)=> {
         params["offset"] = offset;
         params["limit"] = limit;
         console.log(params)
@@ -24,8 +26,26 @@ angular.module('app').service("CharactersService", function($http, env){
             params,
         });
     };
-    this.getCharacterDetails = (characterId) =>{
+    vm.getCharacterDetails = (characterId) =>{
         return $http.get(`${urlBase}/characters/${characterId}`,{
+            params,
+        })
+    }
+
+    vm.getCharacterComics = (characterId) =>{
+        return $http.get(`${urlBase}/characters/${characterId}/comics`,{
+            params,
+        })
+    }
+
+    vm.getCharacterSeries = (characterId) =>{
+        return $http.get(`${urlBase}/characters/${characterId}/series`,{
+            params,
+        })
+    }
+
+    vm.getCharacterStories = (characterId) =>{
+        return $http.get(`${urlBase}/characters/${characterId}/stories`,{
             params,
         })
     }
