@@ -57,4 +57,9 @@ function HomeController(charactersService, $state) {
     vm.characterId = character.id;
     $state.go("details", {characterId: character.id});
   }
+  vm.init = ()=>{
+    vm.search();
+  }
+
+  vm.init();
 }

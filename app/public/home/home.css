@@ -1,3 +1,6 @@
+body{
+  background-color: #720303;
+}
 header{
   margin-bottom: 10px;
   background-color: rgba(161, 161, 161, 0.548);
@@ -23,7 +26,6 @@ background: -webkit-linear-gradient(top, #000000, #720303);
 background: linear-gradient(to bottom, #000000, #c50909);
 background: -webkit-linear-gradient(top, #000000, #c50909);
 }
-
 .myText{
   padding-left: 10px;
   color: black;
@@ -34,7 +36,4 @@ background: -webkit-linear-gradient(top, #000000, #c50909);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap
-}
-body{
-  background-color: #720303;
 }
