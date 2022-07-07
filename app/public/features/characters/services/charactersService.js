@@ -33,26 +33,28 @@ angular.module('app').service("CharactersService", function($http, env){
     }
 
     vm.getCharacterComics = (characterId) =>{
-        params["offset"] = 0;
-        delete params.nameStartsWith;
+        vm.cleanParams();
         return $http.get(`${urlBase}/characters/${characterId}/comics`,{
             params,
         })
     }
 
     vm.getCharacterSeries = (characterId) =>{
-        params["offset"] = 0;
-        delete params.nameStartsWith;
+        vm.cleanParams();
         return $http.get(`${urlBase}/characters/${characterId}/series`,{
             params,
         })
     }
 
     vm.getCharacterStories = (characterId) =>{
-        params["offset"] = 0;
-        delete params.nameStartsWith;
+        vm.cleanParams();
         return $http.get(`${urlBase}/characters/${characterId}/stories`,{
             params,
         })
+    }
+
+    vm.cleanParams = ()=>{
+        params["offset"] = 0;
+        delete params.nameStartsWith;
     }
 })
