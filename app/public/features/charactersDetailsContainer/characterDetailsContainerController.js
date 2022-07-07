@@ -62,5 +62,4 @@ function CharactersDetailsController($stateParams, charactersService) {
       };
 
       vm.getDetails(vm.characterId);
-      //vm.getComicsByCharacter(vm.characterId);
 }
