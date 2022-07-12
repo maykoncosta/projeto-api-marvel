@@ -18,8 +18,6 @@ function CharactersDetailsController($stateParams, charactersService) {
           vm.characterComicsCount = vm.charactersDetails.comics.items;
           vm.characterSeriesCount = vm.charactersDetails.series.items;
           vm.characterStoriesCount = vm.charactersDetails.stories.items;
-          console.log(vm.characterComicsItems);
-          console.log(vm.characterSeriesItems);
         })
         .catch((error) => {
           console.log(error);

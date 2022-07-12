@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
 body {
     color: #000;
+}
+
+.section-details{
+  margin-top: 70px;
 }
 
 .jumbotron{
@@ -8,7 +13,7 @@ body {
     padding-bottom: 20px;
     padding-left: 10px;
     background-color: #d6d6d6;
-    height: 270px;
+    height: auto;
 }
 .grid-container{
     display: inline-grid;
@@ -40,7 +45,8 @@ body {
     position: relative;
 }
 
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 800px) {
     .img-character{
         position: relative;
         grid-column: 1 / 5;
@@ -63,83 +69,120 @@ body {
         gap: 10px;
         padding: 10px;
     }
+    body .container{
+        flex-direction: column;
+    }
+
   }
-:root {
-    --offset-before: 8px;
-    --offset-after: 16px;
-}
-.card-container{
-    padding-left: 30px;
-    
-}
 
-.card {
+  @media screen and (max-width: 1000px){
+    body .container .card {
+        min-width: 500px;
+    }
+  }
+
+  body .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px 0;
+  }
+  
+  body .container .card {
     position: relative;
-    width: 400px;
-    margin: 60px auto;
-}
-
-.card::before,
-.card::after {
+    min-width: 250px;
+    height: 340px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+      inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+      5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 30px;
+    transition: 0.5s;
+  }
+  
+  body .container .card:nth-child(1) .box .content a {
+    background: #2196f3;
+  }
+  
+  body .container .card:nth-child(2) .box .content a {
+    background: #e91e63;
+  }
+  
+  body .container .card:nth-child(3) .box .content a {
+    background: #23c186;
+  }
+  
+  body .container .card .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #d6d6d6;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  body .container .card .box:hover {
+    transform: translateY(-50px);
+  }
+  
+  body .container .card .box:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
-}
-
-.card::before,
-.card::after,
-.card .card-inner {
-    background-color: #d6d6d6;
-    border: 1px solid #720303;
-    transition: transform 0.5s;
-}
-
-.card::before,
-.card-inner {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  
+  body .container .card .box .content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  body .container .card .box .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8rem;
+    color: #720303;
+  }
+  
+  body .container .card .box .content h3 {
+    font-size: 1.8rem;
+    color: #fff;
     z-index: 1;
-}
-
-.card-inner {
+    transition: 0.5s;
+    margin-bottom: 15px;
+  }
+  
+  
+  body .container .card .box .content h3 {
     position: relative;
-    padding: 4rem;
-}
-
-.cards-diagonal::before {
-    width: 370px;
-    transform: translate(calc(3 * 8px),
-            calc(-1 * 8px));
-}
-
-.cards-diagonal::after {
-    width: 370px;
-    transform: translate(calc(2 * 16px),
-            calc(-1 * 16px));
-}
-
-.cards-diagonal:hover::before {
-    transform: translate(7px, 5px);
-}
-
-.cards-diagonal:hover::after {
-    transform: translate(1px, 8px);
-}
-
-.cards-rotate::before,
-.cards-rotate::after {
-    transform-origin: 50% 100%;
-}
-
-.cards-rotate:hover {
-    transform: translate(2.5px, 0) rotate(2.5deg);
-}
-
-.cards-rotate:hover::before {
-    transform: translate(2.5px, 0) rotate(2.5deg);
-}
-
-.cards-rotate:hover::after {
-    transform: translate(5px, 0) rotate(5deg);
-}
+    display: inline-block;
+    padding: 8px 20px;
+    background: black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #d6d6d6;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+  }
+  body .container .card .box .content h3:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    background: #fff;
+    color: #000;
+  }
+  body .container .card .box .content h3:hover {
+    cursor: pointer;
+  }
