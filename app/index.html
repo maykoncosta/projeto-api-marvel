@@ -6,11 +6,16 @@
     <meta name="description" content="Api marvel consumida em AngularJS">
     <link rel="stylesheet" href="assets/css/deps.min.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
-    <title>Safra Heroica</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/icon" />
   </head>
   <body  ng-controller="HomeController as ctrl">
-    <search-character search-name="ctrl.searchName" search="ctrl.search()"></search-character>
+    <header-app></header-app>
+    <search-character 
+    search-name="ctrl.searchName" 
+    search="ctrl.search()">
+  </search-character>
     <div ui-view></div>
+    <footer-app></footer-app>
     <script src="assets/js/deps.min.js"></script>
     <script src="assets/js/app.min.js"></script>
   </body>
