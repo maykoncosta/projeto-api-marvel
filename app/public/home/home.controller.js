@@ -22,6 +22,8 @@ function HomeController(charactersService, $state) {
     .then((response) => {
       vm.countCharacters += response.data.data.results.length;
       vm.totalItens = response.data.data.total;
+      console.log(vm.characters)
+      vm.characters = [];
       vm.characters = response.data.data.results;
       console.log(vm.characters)
     })
@@ -36,8 +38,11 @@ function HomeController(charactersService, $state) {
     if (vm.searchName == "") {
       vm.searchName = "";
     }
-    $state.go("home");
-    vm.getCharacters();
+    if(!$state.go("home")){
+      $state.go("home");
+
+    }
+      vm.getCharacters();
   }
   
   vm.nextPage = () =>{
@@ -59,7 +64,7 @@ function HomeController(charactersService, $state) {
     $state.go("details", {characterId: character.id});
   }
   vm.init = ()=>{
-    vm.search();
+    vm.getCharacters();
   }
 
   vm.init();

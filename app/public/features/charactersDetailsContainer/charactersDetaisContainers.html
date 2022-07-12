@@ -1,4 +1,5 @@
-<section ng-controller="CharactersDetailsController as ctrl">
+<section class="section-details" 
+    ng-controller="CharactersDetailsController as ctrl">
     <div class="jumbotron">
         <div class="grid-container">
             <h3 class="descriptionCharacter">{{ctrl.charactersDetails.description}}</h3>
@@ -6,36 +7,37 @@
             <h2 class="nameCharacter">{{ctrl.charactersDetails.name}}</h2>
         </div>
     </div>
-        <div class="card-container ">
-            <div class="card cards-diagonal col-md-4 col-xs-6 col-sm-4">
-                <div class="card-inner"
+        <div class="container">
+            <div class="card">
+                <div class="box">
+                <div class="content"
                 ng-click="ctrl.getComicsByCharacter(ctrl.characterId)">
-                    <h1>Comics</h1>
-                    <div class="card-body" >
+                    <h3>Comics</h3>
+                    <h2 class="card-body" >
                         {{ctrl.characterComicsCount.length}}
-                    </div>
+                    </h2>
                 </div>
             </div>
-        </div>
-        <div class="card-container ">
-            <div class="card cards-diagonal col-md-4 col-xs-12 col-sm-6">
-                <div class="card-inner" 
+            </div>
+            <div class="card">
+                <div class="box">
+                <div class="content"
                 ng-click="ctrl.getStoriesByCharacter(ctrl.characterId)">
-                    <h1>Stories</h1>
-                    <div class="card-body">
+                    <h3>Stories</h3>
+                    <h2 class="card-body">
                         {{ctrl.characterStoriesCount.length}}
-                    </div>
+                    </h2>
+                </div>
                 </div>
             </div>
-        </div>
-        <div class="card-container ">
-            <div class="card cards-diagonal col-md-12 col-xs-12 col-sm-12">
-                <div class="card-inner"  
+            <div class="card">
+                <div class="box">
+                <div class="content"
                 ng-click="ctrl.getSeriesByCharacter(ctrl.characterId)">
-                    <h1>Series</h1>
-                    <div class="card-body">
+                    <h3>Series</h2>
+                    <h2 class="card-body">
                         {{ctrl.characterSeriesCount.length}}
-                    </div>
+                    </h2>
                 </div>
             </div>
         </div>
