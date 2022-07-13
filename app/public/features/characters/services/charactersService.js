@@ -1,4 +1,4 @@
-angular.module('app', []).service("CharactersService", function($http, env){
+angular.module('app').service("CharactersService", function($http, env){
     const urlBase = env.apiUrl;
     const vm = this;
 

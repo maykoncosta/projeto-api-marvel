@@ -1,5 +1,9 @@
 <section
  class="row section">
+ <search-character 
+    search-name="ctrl.searchName" 
+    search="ctrl.search()">
+  </search-character>
   <div ng-repeat="character in ctrl.characters" 
     class="col-xs-6 col-sm-4 col-md-3">
      <list-character-item see-details="ctrl.seeDetails(character)" 
